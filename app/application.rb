@@ -22,7 +22,7 @@ class Application
       end
     elsif req.path.match(/add/)
       item = req.params["item"]
-      
+
     elsif req.path.match(/search/)
       search_term = req.params["q"]
       resp.write handle_search(search_term)
@@ -31,6 +31,14 @@ class Application
     end
 
     resp.finish
+  end
+
+  def add_item(item)
+    if @@items.include?(item)
+      @@cart << item
+    else
+      "We don't have that item"
+    end
   end
 
   def handle_search(search_term)
