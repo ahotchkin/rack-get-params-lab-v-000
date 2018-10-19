@@ -21,6 +21,7 @@ class Application
         end
       end
     elsif req.path.match(/add/)
+      item = req.params["item"]
       
     elsif req.path.match(/search/)
       search_term = req.params["q"]
