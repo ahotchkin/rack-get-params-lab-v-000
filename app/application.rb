@@ -35,7 +35,7 @@ class Application
 
   def add_item(item)
     if @@items.include?(item)
-      "Added #{item}"
+      "added #{item}"
     else
       "We don't have that item"
     end
